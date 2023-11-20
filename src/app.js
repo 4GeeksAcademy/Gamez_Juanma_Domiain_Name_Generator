@@ -11,16 +11,22 @@ window.onload = function() {
   let adj = ["great", "big"];
   let noun = ["jogger", "racoon"];
   let extension = [".es", ".com", ".net", ".us", ".io"];
-  function domainNameGenerator(arr1, arr2, arr3, arr4) {
-    for (let i = 0; i < arr1.length; i++) {
-      for (let j = 0; j < arr2.length; j++) {
-        for (let x = 0; x < arr3.length; x++) {
-          for (let y = 0; y < arr4.length; y++) {
-            console.log(arr1[i] + arr2[j] + arr3[x] + arr4[y]);
-          }
+  let resultado = "";
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+      for (let x = 0; x < noun.length; x++) {
+        for (let y = 0; y < extension.length; y++) {
+          resultado +=
+            '<li class= "text-success">' +
+            pronoun[i] +
+            adj[j] +
+            noun[x] +
+            extension[y] +
+            "</li>";
         }
       }
     }
   }
-  console.log(domainNameGenerator(pronoun, adj, noun, extension));
+
+  document.querySelector("#domain").innerHTML = resultado;
 };
